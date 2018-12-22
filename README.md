@@ -1,7 +1,9 @@
 # advent-calendar-likes-display
 
 ## 概要
-Qiitaアドベントカレンダーにいいね数を表示する
+Qiitaアドベントカレンダーにいいね数を表示するChrome拡張。
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/r/rasukarusan/20181223/20181223040404.png)
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/r/rasukarusan/20181223/20181223040130.gif)
 
 ## 使い方
 
