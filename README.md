@@ -11,7 +11,7 @@ Qiitaアドベントカレンダーにいいね数を表示するChrome拡張。
 2. ローカルサーバーを立ち上げる
 ```
 $ git clone https://github.com/Rasukarusan/qiita-advent-calendar-likes-display.git
-$ cd qiita-advent-calendar-likes-display
+$ cd qiita-advent-calendar-likes-display/server
 $ php -S localhost:9000
 ```
 3. 好きなアドベントカレンダーにアクセスし「ベルマーク」をクリック
