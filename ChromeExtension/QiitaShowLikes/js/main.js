@@ -1,17 +1,16 @@
-// カレンダーから記事のURLを取得してphpにリクエストを投げる
 function getLikes() {
     $('.adventCalendarCalendar_comment').each(function(){
         var url = $(this).children('a').attr('href')
         if(typeof url === 'undefined') return
          $.ajax({
-             url:'http://localhost:9000/index.php',
+             url:url,
              type:'GET',
-             data:{
-                 'url':url,
-            }
+             dataType: 'html',
         })
         .done( (data) => {
-            $(this).after('<i class="fa fa-fw fa-thumbs-up"></i>'+data)
+            let likes = data.match(/likesCount&quot;:([0-9]*),/)
+            let likeCount = likes[1]
+            $(this).after('<i class="fa fa-fw fa-thumbs-up"></i>'+likeCount)
         })
         .fail( (data) => {
         })
@@ -19,6 +18,8 @@ function getLikes() {
         });
     })
 }
+$('.adventCalendarJumbotron_meta').append('<a id="showLikeButton" data-toggle="tooltip" title="" class="adventCalendarJumbotron_bell" href="javascript:void(0)" ><i class="fa fa-bell"></i></a>')
 
-// いいね表示ボタンを生成する
-$('.adventCalendarJumbotron_meta').append('<a data-toggle="tooltip" title="" target="_blank" class="adventCalendarJumbotron_bell" href="javascript:void(0)" onclick="getLikes()"><i class="fa fa-bell adventCalendarJumbotron_rssIcon"></i></a>')
+$('#showLikeButton').click(function() {
+    getLikes()
+})
