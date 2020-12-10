@@ -8,9 +8,13 @@ function getLikes() {
              dataType: 'html',
         })
         .done( (data) => {
-            let likes = data.match(/likesCount&quot;:([0-9]*),/)
+            let likes = data.match(/likesCount":([0-9]*),/)
             let likeCount = likes[1]
             $(this).after('<i class="fa fa-fw fa-thumbs-up"></i>'+likeCount)
+
+            let pv = data.match(/totalPv":([0-9]*),/)
+            let pvCount = pv[1]
+            $(this).after('<i class="fa fa-fw fa-eye"></i>'+pvCount+'<br/>')
         })
         .fail( (data) => {
         })
