@@ -24,7 +24,7 @@ const getLikes = () => {
 const addShowButton = () => {
   const button = `
     <div id="showButtonContainer">
-      <button id="${BUTTON_ID}" style="border">
+      <button id="${BUTTON_ID}">
         <i class="fa fa-bell"></i> 表示
       </button>
     </div>
@@ -41,7 +41,7 @@ const changeButtonColor = () => {
 
 addShowButton()
 
-$(`#${BUTTON_ID}`).click(function() {
+$(`#${BUTTON_ID}`).click(() => {
   getLikes()
   changeButtonColor()
 })
