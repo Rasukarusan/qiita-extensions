@@ -22,8 +22,8 @@ function getLikes() {
         });
     })
 }
-$('.adventCalendarJumbotron_meta').append('<a id="showLikeButton" data-toggle="tooltip" title="" class="adventCalendarJumbotron_bell" href="javascript:void(0)" ><i class="fa fa-bell"></i></a>')
-
+let button = '<div id="showButtonContainer"><button id="showLikeButton" style="border"><i class="fa fa-bell"></i> 表示</button></div>'
+$('.container' + '.adventCalendarSection').after(button)
 $('#showLikeButton').click(function() {
     getLikes()
 })
