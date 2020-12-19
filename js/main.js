@@ -1,4 +1,5 @@
 main()
+$('.p-adcal_sidebar').remove()
 
 function main() {
   createTable()
