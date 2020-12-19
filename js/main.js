@@ -1,14 +1,10 @@
 main()
-$('.p-adcal_sidebar').remove()
 
 function main() {
   createTable()
-  const jqXHRList = getUrls().map(url => $.ajax({
-    url,
-    type:'GET',
-    dataType: 'html'
-  }))
+  const jqXHRList = fetchContents()
   $.when.apply($, jqXHRList).done(appendContents)
+  addHideSidebar()
 }
 
 function getUrls() {
@@ -17,6 +13,13 @@ function getUrls() {
     urls.push($(e).attr('href'))
   })
   return urls
+}
+function fetchContents() {
+  return getUrls().map(url => $.ajax({
+    url,
+    type:'GET',
+    dataType: 'html'
+  }))
 }
 
 function appendContents () {
@@ -97,4 +100,14 @@ function createTable() {
   `
   $('.p-adcal_main').append(table)
 }
+
+function addHideSidebar() {
+  const button = '<button id="hideSidebarButton"><i class="fa fa-eye-slash"></i> 隠す</button>'
+  $('.ac-CategoryHeading_title').append(button)
+
+  $('#hideSidebarButton').click(() => {
+    $('.p-adcal_sidebar').toggle()
+  })
+}
+
 
