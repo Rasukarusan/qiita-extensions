@@ -11,6 +11,10 @@ const getLikes = () => {
        dataType: 'html',
     })
     .done(data => {
+      const stock = data.match(/"stockedCount":([0-9]*),/)
+      const stockCount = stock[1]
+      $(this).after('<p><i class="fa fa-fw fa-archive"></i>'+stockCount+'</p>')
+
       const likes = data.match(/"likesCount":([0-9]*),/)
       if(!likes) return
       const likeCount = likes[1]
