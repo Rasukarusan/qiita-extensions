@@ -1,4 +1,5 @@
 const BUTTON_ID = 'showLikeButton'
+$('.adventCalendarCalendar_leave').css({'z-index': -1})
 
 const getLikes = () => {
   $('.adventCalendarCalendar_comment').each(function(){
@@ -11,12 +12,13 @@ const getLikes = () => {
     })
     .done(data => {
       const likes = data.match(/"likesCount":([0-9]*),/)
+      if(!likes) return
       const likeCount = likes[1]
-      $(this).after('<i class="fa fa-fw fa-thumbs-up"></i>'+likeCount)
+      $(this).after('<p><i class="fa fa-fw fa-thumbs-up"></i>'+likeCount+'</p>')
 
       const pv = data.match(/"totalPv":([0-9]*),/)
       const pvCount = pv[1]
-      $(this).after('<i class="fa fa-fw fa-eye"></i>'+pvCount+'<br/>')
+      $(this).after('<p><i class="fa fa-fw fa-eye"></i>'+pvCount+'</p>')
     })
   })
 }
@@ -45,3 +47,4 @@ $(`#${BUTTON_ID}`).click(() => {
   getLikes()
   changeButtonColor()
 })
+getLikes()
