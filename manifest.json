@@ -8,5 +8,8 @@
         "css": ["css/style.css"],
         "run_at": "document_end"
     }],
+    "background": {
+        "scripts": ["js/hot-reload.js"]
+    },
     "manifest_version": 2
 }
