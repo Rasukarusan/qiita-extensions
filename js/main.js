@@ -5,12 +5,9 @@ const getLikes = () => {
   $('.adventCalendarCalendar_comment').each(function(){
     const url = $(this).children('a').attr('href')
     if(typeof url === 'undefined') return
-     $.ajax({
-       url,
-       type:'GET',
-       dataType: 'html',
-    })
-    .done(data => {
+    const hostname = new URL(url).hostname
+    if (hostname !== 'qiita.com') return
+     $.ajax({ url, dataType: 'html' }).done(data => {
       const stock = data.match(/"stockedCount":([0-9]*),/)
       const stockCount = stock[1]
       $(this).after('<p><i class="fa fa-fw fa-archive"></i>'+stockCount+'</p>')
