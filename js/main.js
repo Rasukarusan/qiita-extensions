@@ -31,10 +31,32 @@ function appendContents () {
       contents[index] = [...contents[index], element]
     })
   }
+
   $('.adventCalendarCalendar_day').each((index, element) => {
-    contents[index].forEach(content => {
-      $(element).append(content)
+    const containerId = `feed-contents-${index}`
+    $(element).append(`<div id="${containerId}" style="height: ${contents[index].length * 80}; overflow: auto"></div>`)
+    contents[index].forEach(async (content) => {
+      const url = $(content).find('a')[0].href
+      const hostname = new URL(url).hostname
+      if (hostname !== 'qiita.com') {
+        $(`#${containerId}`).append(content)
+        return
+      }
+      const { pv, likes, stock } = await getDetail(url)
+      $(content).append('<br><span><i class="fa fa-fw fa-eye"></i>'+pv+'</span>')
+      $(content).append('<span><i class="fa fa-fw fa-thumbs-up"></i>'+likes+'</span>')
+      $(content).append('<span><i class="fa fa-fw fa-archive"></i>'+stock+'</span>')
+      $(`#${containerId}`).append(content)
     })
+  })
+}
+
+function getDetail(url) {
+  return $.ajax({ url, type:'GET', dataType: 'html' }).then(data => {
+    const pv = data.match(/"totalPv":([0-9]*),/)[1]
+    const likes = data.match(/"likesCount":([0-9]*),/)[1]
+    const stock = data.match(/"stockedCount":([0-9]*),/)[1]
+    return {pv, likes, stock}
   })
 }
 
@@ -101,6 +123,7 @@ function createTable() {
   $('.p-adcal_main').append(table)
 }
 
+$('.p-adcal_sidebar').hide()
 function addHideSidebar() {
   const button = '<button id="hideSidebarButton"><i class="fa fa-eye-slash"></i> 隠す</button>'
   $('.ac-CategoryHeading_title').append(button)

@@ -64,7 +64,7 @@
     font-size: 12px;
     padding: 0 10px;
     margin: 10px 0;
-    height: 5.3em;
+    height: 6.3em;
     overflow: hidden
 }
 
@@ -84,7 +84,6 @@
 
 .adventCalendarCalendar td {
     width: 14.28571%;
-    height: 180px;
     border-left: 1px solid #ddd;
     border-top: 1px solid #ddd;
     padding: 0;
