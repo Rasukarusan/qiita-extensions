@@ -1,3 +1,6 @@
+/**
+ * アドベントカレンダーにいいね数、ストック数、View数を表示する
+ */
 (function() {
 $('.adventCalendarCalendar_leave').css({'z-index': -1})
 
