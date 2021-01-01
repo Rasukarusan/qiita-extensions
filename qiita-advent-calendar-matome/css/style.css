@@ -1,0 +1,95 @@
+#hideSidebarButton {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  text-decoration: none;
+  margin-left: 20px;
+  color: #FFF;
+  background-color: #668ad8;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+#hideSidebarButton:hover {
+  cursor: pointer;
+}
+#hideSidebarButton:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+.adventCalendarCalendar {
+    padding-top: 30px
+}
+
+.adventCalendarCalendar table {
+    table-layout: fixed
+}
+
+.adventCalendarCalendar table.table tr>th {
+    border-bottom-color: #cab2a9
+}
+
+.adventCalendarCalendar_dayName {
+    color: #555;
+    font-weight: 700 !important
+}
+
+.adventCalendarCalendar_day {
+    padding: 0 !important;
+    line-height: 1.3 !important
+}
+
+.adventCalendarCalendar_day .adventCalendarCalendar_date {
+    margin-bottom: 8px;
+    padding: 4px 10px;
+    background-color: #efebe9;
+    color: #a1887f;
+    font-size: 16px;
+    font-weight: 700
+}
+
+.adventCalendarCalendar_day-disabled {
+    background-color: #fbfbfb;
+    line-height: 1.3 !important
+}
+
+.adventCalendarCalendar_day-disabled .adventCalendarCalendar_date {
+    padding: 2px 10px;
+    color: #999;
+    font-size: 16px
+}
+
+.adventCalendarCalendar_comment {
+    font-size: 12px;
+    padding: 0 10px;
+    margin: 10px 0;
+    height: 6.3em;
+    overflow: hidden
+}
+
+.adventCalendarCalendar table {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd
+}
+
+.adventCalendarCalendar th {
+    font-weight: 400;
+    border-left: 1px solid #ddd
+}
+
+.adventCalendarCalendar th:last-child {
+    border-right: 1px solid #ddd
+}
+
+.adventCalendarCalendar td {
+    width: 14.28571%;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 0;
+    position: relative;
+}
+
+.adventCalendarCalendar td:last-child {
+    border-right: 1px solid #ddd
+}
