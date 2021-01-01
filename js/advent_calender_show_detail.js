@@ -24,25 +24,12 @@ const getLikes = () => {
   })
 }
 
-const addShowButton = () => {
-  const button = `
-    <div id="showButtonContainer">
-      <button id="${BUTTON_ID}">
-        <i class="fa fa-bell"></i> 表示
-      </button>
-    </div>
-  `
-  $('.container' + '.adventCalendarSection').after(button)
-}
-
 const changeButtonColor = () => {
   $(`#${BUTTON_ID}`).css({
     'background': '#D04255',
     'border-bottom': 'solid 4px #E38692',
   })
 }
-
-addShowButton()
 
 $(`#${BUTTON_ID}`).click(() => {
   getLikes()
