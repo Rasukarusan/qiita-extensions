@@ -1,0 +1,23 @@
+#showButtonContainer {
+  text-align: center;
+}
+
+/* @thanks https://saruwakakun.com/html-css/reference/buttons */
+#showLikeButton {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+#showLikeButton:hover {
+  cursor: pointer;
+}
+#showLikeButton:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
