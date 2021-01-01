@@ -1,4 +1,4 @@
-const BUTTON_ID = 'showLikeButton'
+(function() {
 $('.adventCalendarCalendar_leave').css({'z-index': -1})
 
 const getLikes = () => {
@@ -23,16 +23,5 @@ const getLikes = () => {
     })
   })
 }
-
-const changeButtonColor = () => {
-  $(`#${BUTTON_ID}`).css({
-    'background': '#D04255',
-    'border-bottom': 'solid 4px #E38692',
-  })
-}
-
-$(`#${BUTTON_ID}`).click(() => {
-  getLikes()
-  changeButtonColor()
-})
 getLikes()
+})()

@@ -1,5 +1,5 @@
+(function() {
 main()
-
 function main() {
   createTable()
   const jqXHRList = fetchContents()
@@ -132,5 +132,4 @@ function addHideSidebar() {
     $('.p-adcal_sidebar').toggle()
   })
 }
-
-
+})()
