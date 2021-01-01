@@ -1,0 +1,15 @@
+{
+    "name": "QiitaExtensions",
+    "version": "1.0",
+    "description": "Qiita拡張パック",
+    "content_scripts": [{
+        "matches": ["https://qiita.com/advent-calendar/*"],
+        "js": ["js/jquery-3.1.1.min.js", "js/advent_calender_feed_summary.js", "js/advent_calender_show_detail.js"],
+        "css": ["css/advent_calender_feed_summary.css"],
+        "run_at": "document_end"
+    }],
+    "background": {
+        "scripts": ["js/hot-reload.js"]
+    },
+    "manifest_version": 2
+}
