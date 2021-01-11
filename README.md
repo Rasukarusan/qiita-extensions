@@ -6,6 +6,7 @@ QiitaのChrome拡張パック
 
 - [AdventCalenderFeedSummary](#AdventCalenderFeedSummary): 購読中のアドベントカレンダーをまとめて表示する
 - [AdventCalenderShowDetails](#AdventCalenderShowDetails): アドベントカレンダーのカレンダーにいいね数、ストック数、View数を表示する
+- [ShowDetail](#ShowDetail): 他人の記事でもView数を表示する
 
 ## AdventCalenderFeedSummary
 
@@ -20,3 +21,8 @@ QiitaのChrome拡張パック
 アドベントカレンダーのカレンダーにいいね数、ストック数、View数を表示する
 
 ![Demo](https://user-images.githubusercontent.com/17779386/101754368-02ab4f00-3b17-11eb-84a2-b5a467ebc7ae.gif)
+
+## ShowDetail
+
+他人の記事でもView数を表示する
+![Demo](https://user-images.githubusercontent.com/17779386/104185418-4a93fd80-5458-11eb-8c98-c4ffa3bcd94d.png)
