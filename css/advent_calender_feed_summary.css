@@ -93,3 +93,7 @@
 .adventCalendarCalendar td:last-child {
     border-right: 1px solid #ddd
 }
+.count-text {
+  font-size: 14px;
+  font-weight: 700;
+}

@@ -46,7 +46,10 @@ window.onload = function() {
     const container = document.createElement("p")
     const icon = document.createElement("i");
     icon.setAttribute("class", `fa fa-fw ${className}`)
-    const countElement = document.createTextNode(count)
+    const countElement = document.createElement("span")
+    const text = document.createTextNode(count)
+    countElement.appendChild(text)
+    countElement.setAttribute("class", "count-text")
     container.appendChild(icon)
     container.appendChild(countElement)
     return container
