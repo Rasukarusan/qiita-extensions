@@ -104,7 +104,7 @@ window.onload = function () {
     }
 
     // zennの場合
-    if (aTag.href.match(/https:\/\/zenn.dev\//) && hoge == 0) {
+    if (aTag.href.match(/https:\/\/zenn.dev\//)) {
       const url = aTag.href;
       chrome.runtime.sendMessage({ url }, (res) => {
         const parent = aTag.parentElement;
