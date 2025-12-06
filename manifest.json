@@ -14,10 +14,11 @@
         "run_at": "document_end"
     }],
     "background": {
-        "scripts": ["js/hot-reload.js", "js/background.js"]
+        "service_worker": "js/service-worker.js"
     },
-    "permissions": [
-        "https://note.com/*", "https://zenn.dev/*"
+    "host_permissions": [
+        "https://note.com/*",
+        "https://zenn.dev/*"
     ],
-    "manifest_version": 2
+    "manifest_version": 3
 }
